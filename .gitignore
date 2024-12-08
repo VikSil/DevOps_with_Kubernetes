@@ -1,1 +1,3 @@
-/manifests
+manifests/*
+log_output/*
+todo_app/*
