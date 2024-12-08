@@ -15,7 +15,7 @@
 ## Solution
 
 - Application was built in Rust. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.01/app).
-- Image was pushed to Docker Hub repo [viksil/log_output](https://hub.docker.com/repository/docker/viksil/log_output/general).
+- Image was pushed to Docker Hub repo [viksil/log_output](https://hub.docker.com/r/viksil/log_output/tags?name=1.01).
 - The following commands were used to create and test Kubernetes deployment:
 
 ![Deployment for Exercise 1.01](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.01/Exercise_1.01.png)
