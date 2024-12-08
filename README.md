@@ -7,7 +7,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 ### 1. First Deploy
 
 - [Exercise 1.01: Getting started](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.01)
-
+- [Exercise 1.02: Project v.0.1](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.02)
 
 
 ## Disclaimers
