@@ -1,4 +1,4 @@
-## [Assignment]
+## Assignment
 
 > 
 > **Project can be done with any language and framework you want**

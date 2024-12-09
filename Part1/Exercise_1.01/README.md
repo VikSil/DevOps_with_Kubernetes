@@ -1,4 +1,4 @@
-## [Assignment]
+## Assignment
 
 > 
 > **Exercises can be done with any language and framework you want.**

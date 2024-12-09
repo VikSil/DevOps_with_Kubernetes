@@ -1,4 +1,4 @@
-## [Assignment]
+## Assignment
 
 > 
 > Create a deployment.yaml for the project.
