@@ -10,7 +10,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 1.02: Project v.0.1](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.02)
 - [Exercise 1.03: Declarative approach](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.03)
 - [Exercise 1.04: Project v0.2](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.04)
-
+- [Exercise 1.05: Project v0.3](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.05)
 
 ## Disclaimers
 
