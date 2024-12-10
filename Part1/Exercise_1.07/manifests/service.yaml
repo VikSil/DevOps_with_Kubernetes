@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: log-output-service
+spec:
+  type: ClusterIP
+  selector:
+    app: log-output
+  ports:
+    - port: 3011
+      protocol: TCP
+      targetPort: 3011
