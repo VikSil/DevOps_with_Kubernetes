@@ -12,7 +12,7 @@
     apiVersion: apps/v1
     kind: Deployment
     metadata:
-    name: log-output-app
+    name: log-output-depl
     spec:
     replicas: 1
     selector:
