@@ -1,0 +1,8 @@
+[package]
+name = "pingpong"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.9", features = ["tokio", "http1"] }
+tokio = { version = "1.42.0", features = ["full"] }
