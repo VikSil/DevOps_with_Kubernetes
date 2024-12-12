@@ -4,11 +4,11 @@ use std::sync::{Arc, Mutex};
 
 #[tokio::main]
 async fn main() {
-    let visit_count = Arc::new(Mutex::new(0));
+    let visit_count = Arc::new(Mutex::new(-1));
 
     let address: String = String::from("0.0.0.0:3033");
 
-    let router = Router::new().route("/", get(index)).layer(Extension(visit_count)).into_make_service();
+    let router = Router::new().route("/pingpong", get(index)).layer(Extension(visit_count)).into_make_service();
 
     let listener = tokio::net::TcpListener::bind(address).await.unwrap();
 
