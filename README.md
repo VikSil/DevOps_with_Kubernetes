@@ -21,6 +21,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 1.06: Project v0.4](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.06)
 - [Exercise 1.07: External access with Ingress](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.07)
 - [Exercise 1.08: Project v0.5](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08)
+- [Exercise 1.09: More services](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.09)
 
 ## Disclaimers
 

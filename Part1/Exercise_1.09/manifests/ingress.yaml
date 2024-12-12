@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shared-ingress
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+spec:
+  rules:
+  - host: localhost
+  - http:
+      paths:
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: pingpong-service
+            port:
+              number: 3032
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: todo-app-service
+            port:
+              number: 3012
