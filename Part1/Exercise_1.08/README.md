@@ -12,7 +12,7 @@
 
 ### Manifests
 
-[**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08/deployment.yaml)
+[**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08/manifests/deployment.yaml)
 
 Unchanged deployment manifest from [Exercise 1.04](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.04) was used. It sets `PORT` environment variable to `8088` and specifies the target Docker hub image.
 
@@ -55,7 +55,7 @@ Unchanged deployment manifest from [Exercise 1.04](https://github.com/VikSil/Dev
 
 ### Commands
 
-- This exercise used same cluster that was created for [previous exercise](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.07/Exercise_1.07_commands.png). Loadbalancer HTTP port `80` is exposed to outside requests on `localhost:3011`.
+- This exercise used the same cluster that was created for [previous exercise](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.07/Exercise_1.07_commands.png). Loadbalancer HTTP port `80` is exposed to outside requests on `localhost:3011`.
 
 - Ingress for `log-output` app was removed to prevent a clash.
 
