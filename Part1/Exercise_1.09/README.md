@@ -91,6 +91,8 @@
 
 ![Commands for Exercise 1.09](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.09/Exercise_1.09_commands.png)
 
+![Shared Ingress for Exercise 1.09](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.09/Exercise_1.09_ingress.png)
+
 ### GET Request to root
 
 ![GET Request to root](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.09/Exercise_1.09_todo_app.png)
