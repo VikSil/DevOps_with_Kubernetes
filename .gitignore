@@ -3,3 +3,5 @@ todo_app/*
 pingpong/*
 volumes/*
 log_output*/*
+*.txt
+zzz/*
