@@ -23,6 +23,12 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 1.08: Project v0.5](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08)
 - [Exercise 1.09: More services](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.09)
 
+### 4. Introduction to Storage
+
+- [Exercise 1.10: Even more services](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10)
+
+
+
 ## Disclaimers
 
 * Exercise text in README files in this repo has been sourced from the course website. This was done for retention of the orginal exercise text pertaining to solutions in this repo, shall the course change in the future. No copyright infringement intended.
