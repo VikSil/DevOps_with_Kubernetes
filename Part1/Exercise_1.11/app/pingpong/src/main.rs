@@ -2,10 +2,17 @@ use axum::{ Extension, Router, routing::get };
 use std::fs::File;
 use std::io::Write;
 use std::sync::{ Arc, Mutex };
+use tokio::fs;
 
 #[tokio::main]
 async fn main() {
-    let visit_count = Arc::new(Mutex::new(-1));
+    let path: &str = "/usr/local/files/pongs.txt";
+    let content: i32 = match fs::read_to_string(&path).await {
+        Ok(data) => data.parse::<i32>().unwrap(),
+        Err(_) => -1,
+    };
+
+    let visit_count = Arc::new(Mutex::new(content));
 
     let address: String = String::from("0.0.0.0:3033");
 
