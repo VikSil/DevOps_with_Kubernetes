@@ -25,7 +25,7 @@ fn main() {
         let now: DateTime<Utc> = now.into();
         let concatenated: String = now.to_string() + ": " + &s;
 
-        match append_file(&"output.txt", &concatenated) {
+        match append_file(&"/usr/local/files/output.txt", &concatenated) {
             Ok(_) => println!("{}", concatenated),
             Err(_) => println!("An error occured while outputing to the file"),
         }
