@@ -19,7 +19,7 @@
 
 **Log output writer**
 
-Application was unchanged from [Exercise 1.10.](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10).
+Application was unchanged from [Exercise 1.10](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10).
 
 **Log output reader**
 - Application was built in Rust. It listens for a GET request on `localhost:3011`. When a request is received it reads the content of file at `/usr/local/files/pongs.txt` and the last line of file at `/usr/local/files/output.txt`. The two pieces of data are concatenated and displayed to the user Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11/app/log_output_reader).
@@ -162,12 +162,15 @@ This exercise used the same cluster that was created for [exercise 1.07](https:/
 ### GET Requests
 
 **First request to /pingpong route**
+
 ![GET Request for Exercise 1.11](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.11/Exercise_1.11_get_pingpong.png)
 
 **First request to / route**
+
 ![GET Request for Exercise 1.11](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.11/Exercise_1.11_get_log_output.png)
 
 **Additional requests to /pingpong route**
+
 ![GET Request for Exercise 1.11](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.11/Exercise_1.11_get_pingpong_more.png)
 
 
@@ -176,8 +179,10 @@ This exercise used the same cluster that was created for [exercise 1.07](https:/
 ![Redeployment for Exercise 1.11](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.11/Exercise_1.11_commands3.png)
 
 **Another request to /pingpong route** - *count adds to the previous persisted state*
+
 ![GET Request for Exercise 1.11](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.11/Exercise_1.11_get_pingpong_more_more.png)
 
 
 **Another request to / route** - *count is read from the persisted file*
+
 ![GET Request for Exercise 1.11](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.11/Exercise_1.11_get_log_output_later.png)
