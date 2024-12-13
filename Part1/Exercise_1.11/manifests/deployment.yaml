@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-pingpong-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output-pingpong
+  template:
+    metadata:
+      labels:
+        app: log-output-pingpong
+    spec:
+      volumes:
+        - name: shared-volume
+          persistentVolumeClaim:
+            claimName: shared-volume-claim
+      containers:
+        - name: pingpong
+          image: viksil/pingpong:1.11
+          volumeMounts:
+          - name: shared-volume
+            mountPath: /usr/local/files
+        - name: log-reader
+          image: viksil/log_output_reader:1.11
+          volumeMounts:
+          - name: shared-volume
+            mountPath: /usr/local/files
+        - name: log-writer
+          image: viksil/log_output_writer:1.10
+          volumeMounts:
+          - name: shared-volume
+            mountPath: /usr/local/files

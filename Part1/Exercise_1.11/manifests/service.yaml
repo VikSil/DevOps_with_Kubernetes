@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: log-output-pingpong-service
+spec:
+  type: ClusterIP
+  selector:
+    app: log-output-pingpong
+  ports:
+    - name: get-pingpong
+      port: 3032
+      protocol: TCP
+      targetPort: 3033
+    - name: get-log-output
+      port: 3011
+      protocol: TCP
+      targetPort: 3011

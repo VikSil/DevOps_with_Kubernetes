@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: log-output-pingpong-ingress
+spec:
+  rules:
+  - host: localhost
+  - http:
+      paths:
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: log-output-pingpong-service
+            port:
+              number: 3032
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: log-output-pingpong-service
+            port:
+              number: 3011

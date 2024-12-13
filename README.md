@@ -26,6 +26,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 ### 4. Introduction to Storage
 
 - [Exercise 1.10: Even more services](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10)
+- [Exercise 1.11: Even more services](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10)
 
 
 
