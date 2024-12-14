@@ -63,6 +63,25 @@ Unchanged service manifest from [Exercise 1.08](https://github.com/VikSil/DevOps
 
 Unchanged ingress manifest from [Exercise 1.08](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08) was used.
 
+[**Persistent Volume**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.12/volumes/persistentvolume.yaml)
+
+Persistent Volume manifest from [Exercise 1.11](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11) was used, with only the `metadata name` and `storageClassName` changed to *todo_app*:
+
+    metadata:
+    name: todo-app-volume
+    spec:
+    storageClassName: todo-app-volume-pv
+
+[**Persistent Volume Claim**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.12/volumes/persistentvolumeclaim.yaml)
+
+Persistent Volume Claim manifest from [Exercise 1.11](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11) was used, with only the `metadata name` and `storageClassName` changed to *todo_app*:
+
+    metadata:
+    name: todo-app-volume-claim
+    spec:
+    storageClassName: todo-app-volume-pv
+
+
 ### Commands
 
 This exercise used the same cluster that was created for [exercise 1.07](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.07/Exercise_1.07_commands.png). Loadbalancer HTTP port `80` is exposed to outside requests on `localhost:3011`.
