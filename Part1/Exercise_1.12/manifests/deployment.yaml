@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      volumes:
+        - name: todo-app-volume
+          persistentVolumeClaim:
+            claimName: todo-app-volume-claim
+      containers:
+        - name: todo-app
+          image: viksil/todo_app:1.12
+          env:
+          - name: PORT
+            value: "8088"
+          # uncomment to set timeout between image downloads (in seconds)
+          # - name: TIMEOUT
+          #   value: "25"
+          volumeMounts:
+          - name: todo-app-volume
+            mountPath: /usr/local/files

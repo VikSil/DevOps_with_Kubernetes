@@ -27,6 +27,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 
 - [Exercise 1.10: Even more services](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10)
 - [Exercise 1.11: Persisting data](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11)
+- [Exercise 1.12: Project v0.6](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.12)
 
 
 
