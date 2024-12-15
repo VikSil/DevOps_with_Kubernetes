@@ -1,0 +1,10 @@
+[package]
+name = "log_output_reader"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.9", features = ["tokio", "http1"] }
+reqwest = {version = "0.12.9", features = ["json"]}
+rev_buf_reader = "0.3.0"
+tokio = { version = "1.42.0", features = ["full"] }

@@ -23,7 +23,7 @@ Solution from [Exercise 1.07](https://github.com/VikSil/DevOps_with_Kubernetes/t
 
 **Log reader**
 
-- Application was built in Rust. Application listens to port 3022. When a get request is received, it sends requests to endpoints `http://pingpong-service:3033/pingpong` and `http://log-output-service:3011`. It concatenates the responses and returns the result to the user. For the purposes of the exercise the endpoints are hard-coded, but for a more general usecase, environment variables could be used. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.01/app/todo_app/log_reader).
+- Application was built in Rust. Application listens to port 3022. When a get request is received, it sends requests to endpoints `http://pingpong-service:3033/pingpong` and `http://log-output-service:3011`. It concatenates the responses and returns the result to the user. For the purposes of the exercise the endpoints are hard-coded, but for a more general usecase, environment variables could be used. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.01/app/log_output_reader).
 - Image was pushed to Docker Hub repo [viksil/log_output_reader:2.01](https://hub.docker.com/r/viksil/log_output_reader/tags?name=2.01).
 
 ### Manifests
