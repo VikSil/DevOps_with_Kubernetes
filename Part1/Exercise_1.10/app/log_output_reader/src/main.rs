@@ -1,6 +1,4 @@
 use axum::{ Router, routing::get };
-use std::collections::hash_map::DefaultHasher;
-use std::hash::{Hash, Hasher};
 use tokio::fs;
 
 
@@ -19,17 +17,16 @@ async fn main() {
 
 // Serve to / route
 async fn index() -> String {
-
-    // Get file contents
+    // Get last line from the log output file
     let path: &str = "/usr/local/files/output.txt";
-    let content:String =fs::read_to_string(&path).await.unwrap();
+    let file = File::open(&path).expect("File not found");
+    let buffer = RevBufReader::new(&file);
+    let output: String = buffer
+        .lines()
+        .take(1)
+        .map(|l| l.expect("Failed to parse the file"))
+        .collect();
 
-    // Hash the contents
-    let mut hasher = DefaultHasher::new();
-    content.hash(&mut hasher);
-    let hash = hasher.finish();
-
-    let output:String = "Content Hash: ".to_owned() + &hash.to_string() + "\n\n" + "File Content:\n" + &content;
     format!("{}", output) // respond to GET request
 
 

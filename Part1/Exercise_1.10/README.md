@@ -21,7 +21,7 @@
 - Image was pushed to Docker Hub repo [viksil/log_output_writer:1.10](https://hub.docker.com/r/viksil/log_output_writer/tags?name=1.10).
 
 **Log output reader**
-- Application was built in Rust. It listens for a GET request on `localhost:3011`. When a request is received it generates a hash of the current content of the file and displays the hash and file content to the user. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10/app/log_output_reader).
+- Application was built in Rust. It listens for a GET request on `localhost:3011`.  When a request is received it reads the content of file at `/usr/local/files/output.txt` and displayed the last line to the user. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10/app/log_output_reader).
 - Image was pushed to Docker Hub repo [viksil/log_output_reader:1.10](https://hub.docker.com/r/viksil/log_output_reader/tags?name=1.10).
 
 ### Manifests
