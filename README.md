@@ -31,6 +31,11 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 1.13: Project v0.7](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.13)
 
 
+## Part 2
+
+### 1. Networking between pods
+
+- [Exercise 2.01: Connecting pods](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.01)
 
 ## Disclaimers
 
