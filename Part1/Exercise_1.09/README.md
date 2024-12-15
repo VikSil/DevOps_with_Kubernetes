@@ -60,8 +60,6 @@
     kind: Ingress
     metadata:
     name: shared-ingress
-    annotations:
-        kubernetes.io/ingress.class: "nginx"
     spec:
     rules:
     - host: localhost
