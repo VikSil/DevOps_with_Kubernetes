@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: pingpong-service
+spec:
+  type: ClusterIP
+  selector:
+    app: pingpong
+  ports:
+    - port: 3033
+      protocol: TCP
+      targetPort: 3033
