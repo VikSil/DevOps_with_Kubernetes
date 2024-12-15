@@ -76,16 +76,16 @@
             pathType: Prefix
             backend:
             service:
-                name: todo-app-service
+                name: log-output-service
                 port:
-                number: 3012
+                number: 3011
 
 
 ### Commands
 
 - This exercise used the same cluster that was created for [exercise 1.07](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.07/Exercise_1.07_commands.png). Loadbalancer HTTP port `80` is exposed to outside requests on `localhost:3011`.
 
-- Ingress for `todo-app` was removed to prevent a clash.
+- Ingress for `log-output` service was removed to prevent a clash.
 
 ![Commands for Exercise 1.09](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.09/Exercise_1.09_commands.png)
 
@@ -93,7 +93,7 @@
 
 ### GET Request to root
 
-![GET Request to root](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.09/Exercise_1.09_todo_app.png)
+![GET Request to root](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part1/Exercise_1.09/Exercise_1.09_log_output_app.png)
 
 
 ### GET Request to /pingpong
