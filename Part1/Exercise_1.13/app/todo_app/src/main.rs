@@ -58,7 +58,7 @@ async fn index() -> impl IntoResponse {
         </div>
         <div>
             <form>
-                <input type="text">
+                <input type="text" maxlength="140">
                 <input type="submit" value="Create TODO">
             </form>
         </div>
