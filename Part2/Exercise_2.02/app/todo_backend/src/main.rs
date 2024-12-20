@@ -100,7 +100,7 @@ async fn replace_image() -> Result<(), Error> {
 
     let timeout: u64 = match env::var("TIMEOUT") {
         Ok(val) => val.parse::<u64>().unwrap(),
-        Err(_e) => 360, // by default serve a new image every hour
+        Err(_e) => 3600, // by default serve a new image every hour
     };
 
     let now = SystemTime::now();
