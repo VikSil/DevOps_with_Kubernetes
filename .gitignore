@@ -5,3 +5,5 @@ volumes/*
 log_output*/*
 *.txt
 zzz/*
+todo_backend/*
+pinglog/*
