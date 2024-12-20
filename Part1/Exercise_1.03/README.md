@@ -9,23 +9,25 @@
 
 ### Deployment manifest
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
     metadata:
-    name: log-output-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: log-output
-    template:
-        metadata:
-        labels:
-            app: log-output
-        spec:
-        containers:
-            - name: log-output
-            image: viksil/log_output:1.01
+    spec:
+      containers:
+        - name: log-output
+          image: viksil/log_output:1.01
+```
 
 
 ### Commands

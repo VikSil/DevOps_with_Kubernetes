@@ -37,39 +37,43 @@
 
 [*Deployment*](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.02/manifests/todo_backend/deployment.yaml)
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-backend-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
     metadata:
-    name: todo-backend-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: todo-backend
-    template:
-        metadata:
-        labels:
-            app: todo-backend
-        spec:
-        containers:
-            - name: todo-backend
-            image: viksil/todo_backend:2.02
+    spec:
+      containers:
+        - name: todo-backend
+          image: viksil/todo_backend:2.02
+```
 
 
 [*Service*](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.02/manifests/todo_backend/service.yaml)
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: todo-backend-service
-    spec:
-    type: ClusterIP
-    selector:
-        app: todo-backend
-    ports:
-        - port: 3040
-        protocol: TCP
-        targetPort: 3040
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-backend-service
+spec:
+  type: ClusterIP
+  selector:
+    app: todo-backend
+  ports:
+    - port: 3040
+      protocol: TCP
+      targetPort: 3040
+```
 
 **Todo app**
 
@@ -87,30 +91,30 @@ Unchanged service manifest from [Exercise 1.08](https://github.com/VikSil/DevOps
 
 [**Shared Ingress**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.02/manifests/shared_ingress.yaml)
 
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-    name: todo-shared-ingress
-    spec:
-    rules:
-    - http:
-        paths:
-        - path: /todos
-            pathType: Prefix
-            backend:
-            service:
-                name: todo-backend-service
-                port:
-                number: 3040
-        - path: /
-            pathType: Prefix
-            backend:
-            service:
-                name: todo-app-service
-                port:
-                number: 3012
-
-
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo-shared-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /todos
+        pathType: Prefix
+        backend:
+          service:
+            name: todo-backend-service
+            port:
+              number: 3040
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: todo-app-service
+            port:
+              number: 3012
+```
 
 ### Commands
 

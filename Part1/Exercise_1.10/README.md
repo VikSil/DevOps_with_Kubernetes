@@ -28,35 +28,36 @@
 
 [**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.10/manifests/deployment.yaml)
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
     metadata:
-    name: log-output-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: log-output
-    template:
-        metadata:
-        labels:
-            app: log-output
-        spec:
-        volumes:
-            - name: shared-dir
-            emptyDir: {}
-        containers:
-            - name: log-output-reader
-            image: viksil/log_output_reader:1.10
-            volumeMounts:
-            - name: shared-dir
-                mountPath: /usr/local/files/
-            - name: log-output-writer
-            image: viksil/log_output_writer:1.10
-            volumeMounts:
-            - name: shared-dir
-                mountPath: /usr/local/files/
-
+    spec:
+      volumes:
+        - name: shared-dir
+          emptyDir: {}
+      containers:
+        - name: log-output-reader
+          image: viksil/log_output_reader:1.10
+          volumeMounts:
+          - name: shared-dir
+            mountPath: /usr/local/files/
+        - name: log-output-writer
+          image: viksil/log_output_writer:1.10
+          volumeMounts:
+          - name: shared-dir
+            mountPath: /usr/local/files/
+```
 
 [**Service**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.07/manifests/service.yaml)
 

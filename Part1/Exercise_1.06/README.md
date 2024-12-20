@@ -7,20 +7,22 @@
 
 ### Service Manifest
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: todo-app-service
-    spec:
-    type: NodePort
-    selector:
-        app: todo-app
-    ports:
-        - name: http
-        nodePort: 30088
-        protocol: TCP
-        port: 1234
-        targetPort: 8088
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-app-service
+spec:
+  type: NodePort
+  selector:
+    app: todo-app
+  ports:
+    - name: http
+      nodePort: 30088
+      protocol: TCP
+      port: 1234
+      targetPort: 8088
+```
 
 ### Commands
 

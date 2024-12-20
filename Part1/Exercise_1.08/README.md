@@ -19,39 +19,40 @@ Unchanged deployment manifest from [Exercise 1.04](https://github.com/VikSil/Dev
 
 [**Service**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08/manifests/service.yaml)
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: todo-app-service
-    spec:
-    type: ClusterIP
-    selector:
-        app: todo-app
-    ports:
-        - port: 3012
-        protocol: TCP
-        targetPort: 8088
-
-
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: todo-app-service
+spec:
+  type: ClusterIP
+  selector:
+    app: todo-app
+  ports:
+    - port: 3012
+      protocol: TCP
+      targetPort: 8088
+```
 
 [**Ingress**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08/manifests/Ingress.yaml)
 
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-    name: todo-app-ingress
-    spec:
-    rules:
-    - http:
-        paths:
-        - path: /
-            pathType: Prefix
-            backend:
-            service:
-                name: todo-app-service
-                port:
-                number: 3012
-
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: todo-app-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: todo-app-service
+            port:
+              number: 3012
+```
 
 ### Commands
 

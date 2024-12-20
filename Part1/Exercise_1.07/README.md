@@ -20,56 +20,63 @@ Port `3011` was mapped all the way through for simplicity.
 
 [**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.07/manifests/deployment.yaml)
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
     metadata:
-    name: log-output-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: log-output
-    template:
-        metadata:
-        labels:
-            app: log-output
-        spec:
-        containers:
-            - name: log-output
-            image: viksil/log_output:1.07
+    spec:
+      containers:
+        - name: log-output
+          image: viksil/log_output:1.07
+```
+
 
 [**Service**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.07/manifests/service.yaml)
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: log-output-service
-    spec:
-    type: ClusterIP
-    selector:
-        app: log-output
-    ports:
-        - port: 3011
-        protocol: TCP
-        targetPort: 3011
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: log-output-service
+spec:
+  type: ClusterIP
+  selector:
+    app: log-output
+  ports:
+    - port: 3011
+      protocol: TCP
+      targetPort: 3011
+```
 
 [**Ingress**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.07/manifests/Ingress.yaml)
 
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-    name: log-output-ingress
-    spec:
-    rules:
-    - http:
-        paths:
-        - path: /
-            pathType: Prefix
-            backend:
-            service:
-                name: log-output-service
-                port:
-                number: 3011
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: log-output-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: log-output-service
+            port:
+              number: 3011
+```
 
 
 ### Commands

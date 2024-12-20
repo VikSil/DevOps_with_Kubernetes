@@ -18,68 +18,71 @@
 
 [**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.09/manifests/deployment.yaml)
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pingpong-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pingpong
+  template:
     metadata:
-    name: pingpong-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: pingpong
-    template:
-        metadata:
-        labels:
-            app: pingpong
-        spec:
-        containers:
-            - name: pingpong
-            image: viksil/pingpong:1.09
+    spec:
+      containers:
+        - name: pingpong
+          image: viksil/pingpong:1.09
+```
 
 
 [**Service**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.09/manifests/service.yaml)
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: pingpong-service
-    spec:
-    type: ClusterIP
-    selector:
-        app: pingpong
-    ports:
-        - port: 3032
-        protocol: TCP
-        targetPort: 3033
-
-
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: pingpong-service
+spec:
+  type: ClusterIP
+  selector:
+    app: pingpong
+  ports:
+    - port: 3032
+      protocol: TCP
+      targetPort: 3033
+```
 
 [**Ingress**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.09/manifests/Ingress.yaml)
 
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-    name: shared-ingress
-    spec:
-    rules:
-    - host: localhost
-    - http:
-        paths:
-        - path: /pingpong
-            pathType: Prefix
-            backend:
-            service:
-                name: pingpong-service
-                port:
-                number: 3032
-        - path: /
-            pathType: Prefix
-            backend:
-            service:
-                name: log-output-service
-                port:
-                number: 3011
-
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: shared-ingress
+spec:
+  rules:
+  - host: localhost
+  - http:
+      paths:
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: pingpong-service
+            port:
+              number: 3032
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: log-output-service
+            port:
+              number: 3011
+```
 
 ### Commands
 

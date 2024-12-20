@@ -22,36 +22,38 @@
 
 [**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.12/manifests/deployment.yaml)
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
     metadata:
-    name: todo-app-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: todo-app
-    template:
-        metadata:
-        labels:
-            app: todo-app
-        spec:
-        volumes:
-            - name: todo-app-volume
-            persistentVolumeClaim:
-                claimName: todo-app-volume-claim
-        containers:
-            - name: todo-app
-            image: viksil/todo_app:1.12
-            env:
-            - name: PORT
-                value: "8088"
-            # uncomment to set timeout between image downloads (in seconds)
-            # - name: TIMEOUT
-            #   value: "25"
-            volumeMounts:
-            - name: todo-app-volume
-                mountPath: /usr/local/files
+    spec:
+      volumes:
+        - name: todo-app-volume
+          persistentVolumeClaim:
+            claimName: todo-app-volume-claim
+      containers:
+        - name: todo-app
+          image: viksil/todo_app:1.12
+          env:
+          - name: PORT
+            value: "8088"
+          # uncomment to set timeout between image downloads (in seconds)
+          # - name: TIMEOUT
+          #   value: "25"
+          volumeMounts:
+          - name: todo-app-volume
+            mountPath: /usr/local/files
+```
 
 
 [**Service**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.08/manifests/service.yaml)
@@ -67,20 +69,23 @@ Unchanged ingress manifest from [Exercise 1.08](https://github.com/VikSil/DevOps
 
 Persistent Volume manifest from [Exercise 1.11](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11) was used, with only the `metadata name` and `storageClassName` changed to *todo_app*:
 
-    metadata:
-    name: todo-app-volume
-    spec:
-    storageClassName: todo-app-volume-pv
+```
+metadata:
+  name: todo-app-volume
+spec:
+  storageClassName: todo-app-volume-pv
+```
 
 [**Persistent Volume Claim**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.12/volumes/persistentvolumeclaim.yaml)
 
 Persistent Volume Claim manifest from [Exercise 1.11](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11) was used, with only the `metadata name` and `storageClassName` changed to *todo_app*:
 
-    metadata:
-    name: todo-app-volume-claim
-    spec:
-    storageClassName: todo-app-volume-pv
-
+```
+metadata:
+  name: todo-app-volume-claim
+spec:
+  storageClassName: todo-app-volume-pv
+```
 
 ### Commands
 

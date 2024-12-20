@@ -9,26 +9,28 @@
 
 ### Deployment manifest
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
     metadata:
-    name: todo-app-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: todo-app
-    template:
-        metadata:
-        labels:
-            app: todo-app
-        spec:
-        containers:
-            - name: todo-app
-            image: viksil/todo_app:1.02
-            env:
-            - name: PORT
-                value: "8088"
+    spec:
+      containers:
+        - name: todo-app
+          image: viksil/todo_app:1.02
+          env:
+          - name: PORT
+            value: "8088"
+```
 
 
 ### Commands

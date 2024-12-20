@@ -29,127 +29,137 @@ Application was unchanged from [Exercise 1.10](https://github.com/VikSil/DevOps_
 
 [**Deployment**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11/manifests/deployment.yaml)
 
-    apiVersion: apps/v1
-    kind: Deployment
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: log-output-pingpong-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output-pingpong
+  template:
     metadata:
-    name: log-output-pingpong-depl
-    spec:
-    replicas: 1
-    selector:
-        matchLabels:
+      labels:
         app: log-output-pingpong
-    template:
-        metadata:
-        labels:
-            app: log-output-pingpong
-        spec:
-        volumes:
-            - name: shared-volume
-            persistentVolumeClaim:
-                claimName: shared-volume-claim
-        containers:
-            - name: pingpong
-            image: viksil/pingpong:1.11
-            volumeMounts:
-            - name: shared-volume
-                mountPath: /usr/local/files
-            - name: log-reader
-            image: viksil/log_output_reader:1.11
-            volumeMounts:
-            - name: shared-volume
-                mountPath: /usr/local/files
-            - name: log-writer
-            image: viksil/log_output_writer:1.10
-            volumeMounts:
-            - name: shared-volume
-                mountPath: /usr/local/files
+    spec:
+      volumes:
+        - name: shared-volume
+          persistentVolumeClaim:
+            claimName: shared-volume-claim
+      containers:
+        - name: pingpong
+          image: viksil/pingpong:1.11
+          volumeMounts:
+          - name: shared-volume
+            mountPath: /usr/local/files
+        - name: log-reader
+          image: viksil/log_output_reader:1.11
+          volumeMounts:
+          - name: shared-volume
+            mountPath: /usr/local/files
+        - name: log-writer
+          image: viksil/log_output_writer:1.10
+          volumeMounts:
+          - name: shared-volume
+            mountPath: /usr/local/files
+```
 
 
 [**Service**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11/manifests/service.yaml)
 
-    apiVersion: v1
-    kind: Service
-    metadata:
-    name: log-output-pingpong-service
-    spec:
-    type: ClusterIP
-    selector:
-        app: log-output-pingpong
-    ports:
-        - name: get-pingpong
-        port: 3032
-        protocol: TCP
-        targetPort: 3033
-        - name: get-log-output
-        port: 3011
-        protocol: TCP
-        targetPort: 3011
+```
+apiVersion: v1
+kind: Service
+metadata:
+  name: log-output-pingpong-service
+spec:
+  type: ClusterIP
+  selector:
+    app: log-output-pingpong
+  ports:
+    - name: get-pingpong
+      port: 3032
+      protocol: TCP
+      targetPort: 3033
+    - name: get-log-output
+      port: 3011
+      protocol: TCP
+      targetPort: 3011
+```
 
 
 
 [**Ingress**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11/manifests/Ingress.yaml)
 
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-    name: log-output-pingpong-ingress
-    spec:
-    rules:
-    - host: localhost
-    - http:
-        paths:
-        - path: /pingpong
-            pathType: Prefix
-            backend:
-            service:
-                name: log-output-pingpong-service
-                port:
-                number: 3032
-        - path: /
-            pathType: Prefix
-            backend:
-            service:
-                name: log-output-pingpong-service
-                port:
-                number: 3011
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: log-output-pingpong-ingress
+spec:
+  rules:
+  - host: localhost
+  - http:
+      paths:
+      - path: /pingpong
+        pathType: Prefix
+        backend:
+          service:
+            name: log-output-pingpong-service
+            port:
+              number: 3032
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: log-output-pingpong-service
+            port:
+              number: 3011
+```
 
 [**Persistent Volume**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11/volumes/persistentvolume.yaml)
 
-    apiVersion: v1
-    kind: PersistentVolume
-    metadata:
-    name: shared-volume
-    spec:
-    storageClassName: shared-volume-pv
-    capacity:
-        storage: 1Gi
-    volumeMode: Filesystem
-    accessModes:
-    - ReadWriteOnce
-    local:
-        path: /tmp
-    nodeAffinity:
-        required:
-        nodeSelectorTerms:
-        - matchExpressions:
-            - key: kubernetes.io/hostname
-            operator: In
-            values:
-            - k3d-k3s-default-agent-0
+```
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: shared-volume
+spec:
+  storageClassName: shared-volume-pv
+  capacity:
+    storage: 1Gi
+  volumeMode: Filesystem
+  accessModes:
+  - ReadWriteOnce
+  local:
+    path: /tmp
+  nodeAffinity:
+    required:
+      nodeSelectorTerms:
+      - matchExpressions:
+        - key: kubernetes.io/hostname
+          operator: In
+          values:
+          - k3d-k3s-default-agent-0
+```
 
 [**Persistent Volume Claim**](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part1/Exercise_1.11/volumes/persistentvolumeclaim.yaml)
 
-    apiVersion: v1
-    kind: PersistentVolumeClaim
-    metadata:
-    name: shared-volume-claim
-    spec:
-    storageClassName: shared-volume-pv
-    accessModes:
-        - ReadWriteOnce
-    resources:
-        requests:
-        storage: 1Gi
+```
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: shared-volume-claim
+spec:
+  storageClassName: shared-volume-pv
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+```
 
 ### Commands
 
