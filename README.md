@@ -38,6 +38,11 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 2.01: Connecting pods](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.01)
 - [Exercise 2.02: Project v1.0](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.02)
 
+### 2. Organizing a cluster
+
+- [Exercise 2.03: Keep them separated](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.03)
+
+
 ## Disclaimers
 
 * Exercise text in README files in this repo has been sourced from the course website. This was done for retention of the orginal exercise text pertaining to solutions in this repo, shall the course change in the future. No copyright infringement intended.
