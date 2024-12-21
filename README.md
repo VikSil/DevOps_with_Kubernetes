@@ -41,6 +41,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 ### 2. Organizing a cluster
 
 - [Exercise 2.03: Keep them separated](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.03)
+- [Exercise 2.04: Project v1.1](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.04)
 
 
 ## Disclaimers
