@@ -7,3 +7,4 @@ log_output*/*
 zzz/*
 todo_backend/*
 pinglog/*
+secret.yaml

@@ -43,6 +43,10 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 2.03: Keep them separated](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.03)
 - [Exercise 2.04: Project v1.1](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.04)
 
+### 3. Configuring applications
+
+- [Exercise 2.05: Secrets](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.05)
+
 
 ## Disclaimers
 
