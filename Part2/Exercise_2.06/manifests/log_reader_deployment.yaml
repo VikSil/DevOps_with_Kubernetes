@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: pinglog-namespace
+  name: log-reader-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-reader
+  template:
+    metadata:
+      labels:
+        app: log-reader
+    spec:
+      volumes:
+        - name: configmap-volume
+          configMap:
+            name: log-output-cfgmap
+            items:
+            - key: "information.txt"
+              path: "information.txt" 
+      containers:
+        - name: log-reader
+          image: viksil/log_output_reader:2.06
+          env:
+          - name: MESSAGE
+            valueFrom:
+              configMapKeyRef:
+                name: log-output-cfgmap
+                key: message
+          volumeMounts:
+          - name: configmap-volume
+            mountPath: /usr/local/config
+            readOnly: true
