@@ -48,6 +48,9 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 2.05: Secrets](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.05)
 - [Exercise 2.06: Documentation and ConfigMaps](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.06)
 
+### 4. StatefulSets and Jobs
+
+- [Exercise 2.07: Stateful applications](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.07)
 
 ## Disclaimers
 
