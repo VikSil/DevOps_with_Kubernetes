@@ -42,19 +42,10 @@ async fn main() {
 
     sqlx::migrate!("./migrations").run(&pool).await.unwrap();
 
-    let pongs = match read(&pool).await {
-        Ok(data) => data,
-        Err(_) => Pings { id: 0, pongs: -1 },
-    };
-    println!("Retrieved {} pongs from the DB", pongs.pongs);
-
-    let visit_count = Arc::new(Mutex::new(pongs.pongs));
-
     let address: String = String::from("0.0.0.0:3033");
 
     let router = Router::new()
         .route("/pingpong", get(index))
-        .layer(Extension(visit_count))
         .into_make_service();
 
     let listener = tokio::net::TcpListener::bind(address).await.unwrap();
@@ -64,22 +55,27 @@ async fn main() {
     axum::serve(listener, router).await.unwrap();
 }
 
-async fn index(Extension(visit_count): Extension<Arc<Mutex<i32>>>) -> String {
+async fn index() -> String {
     let url: String = match env::var("DB_URL") {
         Ok(val) => val,
         Err(_e) => String::from("Environment variable DB_URL is not defined."),
     };
     let pool = sqlx::postgres::PgPool::connect(&url).await.unwrap();
-    let mut count = visit_count.lock().await;
 
-    *count += 1;
+    let mut pongs = match read(&pool).await {
+        Ok(data) => data.pongs,
+        Err(_) => -1,
+    };
+    println!("Retrieved {} pongs from the DB", pongs);
+
+    pongs += 1;
 
     // write to the DB
-    if let Err(e) = write(&count, &pool).await {
+    if let Err(e) = write(&pongs, &pool).await {
         eprintln!("Failed to write to DB: {}", e);
         return format!("Error: {}", e);
     }
 
     // output to user
-    format!("Ping / Pongs: {}", count)
+    format!("Ping / Pongs: {}", pongs)
 }
