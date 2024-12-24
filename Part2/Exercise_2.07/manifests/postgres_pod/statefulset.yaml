@@ -1,6 +1,7 @@
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+  namespace: pinglog-namespace
   name: postgres
 spec:
   serviceName: postgres

@@ -79,6 +79,7 @@ Secret manifest was used to pass in `DB_URL` environment variable, containing da
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
+  namespace: pinglog-namespace
   name: postgres
 spec:
   serviceName: postgres
