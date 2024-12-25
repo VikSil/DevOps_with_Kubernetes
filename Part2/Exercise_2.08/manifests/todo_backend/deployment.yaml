@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: todo-namespace
+  name: todo-backend-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-backend
+  template:
+    metadata:
+      labels:
+        app: todo-backend
+    spec:
+      containers:
+        - name: todo-backend
+          image: viksil/todo_backend:2.08
+          imagePullPolicy: Always
+          env:
+            - name: PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: todo-cfgmap
+                  key: port
+            - name: DB_URL
+              valueFrom:
+                secretKeyRef:
+                  name: todo-secret
+                  key: DB_URL         

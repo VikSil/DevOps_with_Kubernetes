@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: todo-cfgmap
+  namespace: todo-namespace
+data:
+  port: "3055"
+   
