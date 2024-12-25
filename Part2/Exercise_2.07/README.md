@@ -75,6 +75,8 @@ Secret manifest was used to pass in `DB_URL` environment variable, containing da
 
 **[StatefulSet](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.07/manifests/postgres_pod/statefulset.yaml)**
 
+For simplicity only one replica of a StatefulSet was used. Otherwise, the reads and writes are not always routed to the same instance of the database, without setting up a more complicated master-slave relationship between the replicas.
+
 ```
 apiVersion: apps/v1
 kind: StatefulSet
@@ -83,7 +85,7 @@ metadata:
   name: postgres
 spec:
   serviceName: postgres
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: postgres
