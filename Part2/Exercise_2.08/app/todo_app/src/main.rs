@@ -64,7 +64,7 @@ fn page_body() -> Html {
 
             let mut todos_url: String = format!("http://localhost:");
             let port = env!("PORT");
-            let todos_url = todos_url + port + "/todos";
+            todos_url = todos_url + port + "/todos";
 
             wasm_bindgen_futures::spawn_local(async move {
                 let data_serialized = serde_json::to_string_pretty(&new_todo).unwrap();
@@ -87,7 +87,7 @@ fn page_body() -> Html {
     {
         let mut todos_url: String = format!("http://localhost:");
         let port = env!("PORT");
-        let todos_url = todos_url + port + "/todos";
+        todos_url = todos_url + port + "/todos";
 
         let todolist = todolist.clone();
         use_effect_with(refresh_flag, move |_| {
