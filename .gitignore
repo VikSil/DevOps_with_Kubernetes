@@ -8,3 +8,4 @@ zzz/*
 todo_backend/*
 pinglog/*
 secret.yaml
+todo_postgres/*
