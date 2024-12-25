@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace: todo-namespace
+  name: cronjob-configmap
+data:
+  cronjob-script.sh: |
+    #!/bin/bash
+
+    REDIRECT=`curl -Ls -w %{url_effective} -o /dev/null https://en.wikipedia.org/wiki/Special:Random`
+    echo "Read ${REDIRECT}"
+    echo "{\"title\":\"Read ${REDIRECT}\"}" >req.json
+    curl -X POST -H 'Content-Type: application/json' -d @req.json http://todo-backend-service:3055/todos

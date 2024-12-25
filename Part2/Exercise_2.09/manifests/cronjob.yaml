@@ -1,0 +1,24 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  namespace: todo-namespace
+  name: read-random-wiki-page
+spec:
+  schedule: "* * * * *"
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          containers:
+          - name: todo-cronjob
+            image: centos
+            command: ["/script/cronjob-script.sh"]
+            volumeMounts:
+              - name: script
+                mountPath: "/script"
+          volumes:
+            - name: script
+              configMap:
+                name: cronjob-configmap
+                defaultMode: 0500
+          restartPolicy: Never
