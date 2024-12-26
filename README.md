@@ -54,6 +54,10 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 2.08: Project v1.2](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.08)
 - [Exercise 2.09: Daily todos](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.09)
 
+### 5. Monitoring
+
+- [Exercise 2.10: Project v1.3](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.10)
+
 
 ## Disclaimers
 
