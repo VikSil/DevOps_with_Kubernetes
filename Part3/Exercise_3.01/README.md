@@ -28,6 +28,13 @@
 
 ## Manifests
 
+Namespace declaration was added at the top of the `metadata` section of all `.yaml` file.
+
+```
+metadata:
+  namespace: pinglog-namespace
+```
+
 ### Postgres
 
 - Unchanged manifests for `ConfigMap`, `Service` and `Secret` from [Exercise 2.07](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.07) were used.
@@ -61,7 +68,7 @@ metadata:
     app: postgres
 spec:
   accessModes:
-    - ReadWriteMany
+    - ReadWriteOnce
   resources:
     requests:
       storage: 1Gi
@@ -73,7 +80,7 @@ spec:
 - Unchanged manifests for `Deployment` and `Secret` from [Exercise 2.07](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.07) were used.
 - Manifest for `Service` was changed by switching it to `spec.type:LoadBalancer` and switching port to 80, in order to senf HTTP requests.
 
-**[Service](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.01/manifests/pingpong_pod/service)**
+**[Service](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.01/manifests/pingpong_pod/service.yaml)**
 
 ```
 apiVersion: v1
