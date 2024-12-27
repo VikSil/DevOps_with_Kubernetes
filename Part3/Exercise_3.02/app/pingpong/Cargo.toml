@@ -1,0 +1,13 @@
+[package]
+name = "pingpong"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+axum = { version = "0.7.9", features = ["tokio", "http1", "macros"] }
+dotenvy = "0.15.7"
+sqlx = {version="0.8.2", features = ["postgres", "runtime-tokio-native-tls"]}
+tokio = { version = "1.42.0", features = ["full"] }
+
+[profile.dev.package.sqlx-macros]
+opt-level = 3
