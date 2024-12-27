@@ -64,6 +64,8 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 ### 1. Introduction to Google Kubernetes Engine
 
 - [Exercise 3.01: Pingpong GKE](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.01)
+- [Exercise 3.02: Back to Ingress](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.02)
+
 
 ## Disclaimers
 
