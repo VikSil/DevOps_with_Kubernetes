@@ -59,6 +59,12 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 2.10: Project v1.3](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.10)
 
 
+## Part 3
+
+### 1. Introduction to Google Kubernetes Engine
+
+- [Exercise 3.01: Pingpong GKE](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.01)
+
 ## Disclaimers
 
 * Exercise text in README files in this repo has been sourced from the course website. This was done for retention of the orginal exercise text pertaining to solutions in this repo, shall the course change in the future. No copyright infringement intended.
