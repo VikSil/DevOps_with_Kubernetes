@@ -39,7 +39,7 @@ metadata:
   namespace: todo-namespace
   name: read-random-wiki-page
 spec:
-  schedule: "* * * * *"
+  schedule: "0 * * * *"
   jobTemplate:
     spec:
       template:
