@@ -1,0 +1,38 @@
+name: project-delete-branch
+
+env:
+  PROJECT_ID: ${{ secrets.GKE_PROJECT }}
+  GKE_CLUSTER: dwk-cluster
+  GKE_ZONE: europe-west2-c
+
+on:
+  delete:
+
+jobs:
+  build-publish-deploy:
+    name: Delete branch
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 'Log into Google Cloud'
+        uses: google-github-actions/auth@v2
+        with:
+          credentials_json: '${{ secrets.GKE_SA_KEY }}'
+
+      - name: 'Set up Cloud SDK'
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: 'Use gcloud CLI'
+        run: gcloud info
+
+      - name: 'Get GKE credentials'
+        uses: 'google-github-actions/get-gke-credentials@v2'
+        with:
+          cluster_name: '${{ env.GKE_CLUSTER }}'
+          project_id: '${{ env.PROJECT_ID }}'
+          location: '${{ env.GKE_ZONE }}'
+
+      - name: 'Delete namespace'
+        run: |-
+          kubectl delete all --all -n ${{ github.event.ref }}
+          kubectl delete namespace ${{ github.event.ref }}
