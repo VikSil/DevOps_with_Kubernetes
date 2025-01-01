@@ -1,0 +1,43 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  namespace:  backup
+  name: backup-configmap
+data:
+  backup-script.sh: |
+    #!/bin/bash
+
+    set -e
+
+    if [[ -z "${SERVICE_ACCOUNT_KEY}" ]]; then
+      echo "Service account key missing"
+      exit 1
+    fi
+
+    if [[ -z "${DB_URL}" ]]; then
+      echo "DBA URL missing"
+      exit 1
+    fi
+
+    apt-get update && apt-get install -y wget \
+    lsb-release && \
+    echo "deb http://apt.postgresql.org/pub/repos/apt/ $(lsb_release -c | awk '{print $2}')-pgdg main" > /etc/apt/sources.list.d/pgdg.list && \
+    wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | apt-key add - && \
+    apt-get update && apt-get install -y postgresql-client-17 && \
+    rm -rf /var/lib/apt/lists/*
+
+    echo "Postgres installed"
+
+    touch /tmp/gcloud_key.json
+    echo "$SERVICE_ACCOUNT_KEY" > /tmp/gcloud_key.json
+    echo "echoed to key json"
+
+    gcloud auth activate-service-account --key-file=/tmp/gcloud_key.json
+    echo "GCloud activated"
+
+    BACKUP="/tmp/backup-$(date +%FT%T.%3N).sql.gz"
+    pg_dump -v $DB_URL | gzip > $BACKUP
+    echo "Dump complete"
+
+    gsutil cp $BACKUP gs://dwk-gke-backup-bucket/
+    echo "Backup stored"
