@@ -115,3 +115,7 @@ Two secrets were added into the namespace manually:
 - `todo-secret` containing the database connection string.
 - `gc-secret` containing Google Cloud account key
 
+
+## Storage bucket
+
+![Google Cloud sotrage bucket for Exercise 3.07](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part3/Exercise_3.07/Exercise_3.07_GC_bucket.png)
