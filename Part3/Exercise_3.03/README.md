@@ -77,7 +77,7 @@ jobs:
 
 ## Commands
 
-A cluster with two nodes was created with virtual machine type [n4-standard-2](). This type of VM was chosen to meet the demand for resources required by the Rust yew framework on the frontend, since yew app compilation needs to happen on the node at startup. 
+A cluster with two nodes was created with virtual machine type [n4-standard-2](https://cloud.google.com/compute/docs/general-purpose-machines#n4_series). This type of VM was chosen to meet the demand for resources required by the Rust yew framework on the frontend, since yew app compilation needs to happen on the node at startup. 
 
 ![Commands for Exercise 3.03](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part3/Exercise_3.03/Exercise_3.03_commands.png)
 
@@ -89,4 +89,4 @@ A cluster with two nodes was created with virtual machine type [n4-standard-2]()
 
 Since v.0.4 does not have an ingress yet, front end was accessed via Service port in Lense:
 
-![Commands for Exercise 3.03](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part3/Exercise_3.03/Exercise_3.03_deloyment.png)
+![Commands for Exercise 3.03](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part3/Exercise_3.03/Exercise_3.03_deployment.png)
