@@ -76,6 +76,7 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 
 - [Exercise 3.06: DBaaS vs DIY](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.06)
 - [Exercise 3.07: Backup](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.07)
+- [Exercise 3.08: Project v1.5](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.08)
 
 ## Disclaimers
 
