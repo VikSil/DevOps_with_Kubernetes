@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: todo-app
+  template:
+    metadata:
+      labels:
+        app: todo-app
+    spec:
+      containers:
+        - name: todo-app
+          image: PROJECT/IMAGE_APP
+          resources:
+            limits:
+              cpu: "800m"
+              memory: "500Mi"
+          env:
+          - name: PORT
+            value: "8088"
+          - name: BACKEND_HOST
+            valueFrom:
+              configMapKeyRef:
+                name: todo-app-cfgmap
+                key: backend_host
