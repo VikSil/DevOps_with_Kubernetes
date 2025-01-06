@@ -66,6 +66,16 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 3.01: Pingpong GKE](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.01)
 - [Exercise 3.02: Back to Ingress](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.02)
 
+### 2. Deployment Pipeline
+
+- [Exercise 3.03: Project v1.4](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.03)
+- [Exercise 3.04: Project v1.4.1](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.04)
+- [Exercise 3.05: Project v1.4.2](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.05)
+
+### 3. GKE features
+
+- [Exercise 3.06: DBaaS vs DIY](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.06)
+- [Exercise 3.07: Backup](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.07)
 
 ## Disclaimers
 
