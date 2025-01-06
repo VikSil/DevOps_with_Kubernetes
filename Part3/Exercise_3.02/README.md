@@ -25,7 +25,7 @@ The same binaries as for [Exercise 1.07](https://github.com/VikSil/DevOps_with_K
 
 ## Manifests
 
-Namespace declaration was added at the top of the `metadata` section of all `.yaml` file.
+Namespace declaration was added at the top of the `metadata` section of all `.yaml` files.
 
 ```
 metadata:

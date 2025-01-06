@@ -13,7 +13,7 @@ The same applications as for [Exercise 2.01](https://github.com/VikSil/DevOps_wi
 
 **Applications and volume**
 
-The same manifests as for [Exercise 2.01](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.01) were used, with namespace declaration added at the top of the `metadata` section of all `.yaml` file.
+The same manifests as for [Exercise 2.01](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.01) were used, with namespace declaration added at the top of the `metadata` section of all `.yaml` files.
 
 ```
 metadata:
