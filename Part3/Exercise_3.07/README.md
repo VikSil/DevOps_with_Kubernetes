@@ -12,7 +12,7 @@
 
 ## Manifests
 
-The fllowing `CronJob` and `ConfigMap` were added to `kustomize` resources:
+The following `CronJob` and `ConfigMap` were added to `kustomize` resources:
 
 ### [CronJob](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.07/manifests/cronjob.yaml)
 

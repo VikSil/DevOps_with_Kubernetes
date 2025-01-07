@@ -10,4 +10,4 @@
 
 # Solution
 
-![Log explorer for Exercise 3.10](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part3/Exercise_.10/Exercise_3.10_frontend.png)
+![Log explorer for Exercise 3.10](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part3/Exercise_3.10/Exercise_3.10_frontend.png)
