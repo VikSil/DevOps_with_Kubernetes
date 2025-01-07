@@ -18,7 +18,7 @@ A [separate repo](https://github.com/VikSil/HU_MOOC_GKE_deployment) was set up f
 - Code for todo_app was modified to use `BACKEND_HOST` environment variable as connection string for backend starting version 1.1.
 - Starting version 1.1. Deployment manifest for todo_app was altered by adding an environment variable `BACKEND_HOST` sourced from a ConfigMap.
 - Starting version 1.1. ConfigMap was added to todo_app, containing `backend_host` data string. After deployment, once ingress was established, the ConfigMap was updated with the external IP of the ingress and todo_app was restarted to apply the new connection string.
-
+- [Version 1.3](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part2/Exercise_2.10) was added later as part of the [Exercise 3.10](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.10).
 
 ## GitHub action
 
