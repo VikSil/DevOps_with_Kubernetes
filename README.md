@@ -80,6 +80,12 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 3.09: Resource limits](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.09)
 - [Exercise 3.10: Project v1.6](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.10)
 
+## Part 4
+
+### 1. Update Strategies and Prometheus
+
+- [Exercise 4.01: Readiness Probe](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.01)
+
 ## Disclaimers
 
 * Exercise text in README files in this repo has been sourced from the course website. This was done for retention of the orginal exercise text pertaining to solutions in this repo, shall the course change in the future. No copyright infringement intended.
