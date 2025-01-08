@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-output-cfgmap
+  namespace: pinglog-namespace
+data:
+  message: "hello world"
+  information.txt: |
+    this text is from file
+  pingpong_hostname: "pingpong-service:3032"
+  log_hostname: "log-output-service:3010"
+   

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: pinglog-namespace
+  name: log-output-depl
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: log-output
+  template:
+    metadata:
+      labels:
+        app: log-output
+    spec:
+      containers:
+        - name: log-output
+          image: viksil/log_output:1.07
+          imagePullPolicy: Always
+          resources:
+            limits:
+              cpu: "30m"
+              memory: "130Mi"
