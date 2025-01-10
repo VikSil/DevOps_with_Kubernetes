@@ -85,7 +85,11 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 ### 1. Update Strategies and Prometheus
 
 - [Exercise 4.01: Readiness Probe](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.01)
-- [Exercise 4.01: Project v1.7](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.02)
+- [Exercise 4.02: Project v1.7](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.02)
+- [Exercise 4.03: Prometheus](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.03)
+
+
+
 
 ## Disclaimers
 
