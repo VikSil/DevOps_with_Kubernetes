@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: AnalysisTemplate
+metadata:
+  namespace: todo-namespace
+  name: cpu-usage-rate
+spec:
+  metrics:
+  - name: cpu-usage-rate
+    initialDelay: 3m # wait for 3 minutes (Readyness Probe timeout)
+    interval: 20s # then check every 20 seconds
+    count: 30 # 30 times, i.e. for 10 minutes
+    successCondition: result <= 50
+    failureCondition: result > 50 # fail immediatelly if sum exceeds threshold
+    provider:
+      prometheus:
+        address: http://prometheus-kube-prometheus-prometheus.prometheus-namespace.svc.cluster.local:9090 
+        query: |
+          scalar(sum(rate(container_cpu_usage_seconds_total{namespace="todo-namespace"}[1m])))*1000
