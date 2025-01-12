@@ -88,6 +88,8 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 4.02: Project v1.7](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.02)
 - [Exercise 4.03: Prometheus](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.03)
 - [Exercise 4.04: Project v1.8](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.04)
+- [Exercise 4.04: Project v1.9](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.05)
+
 
 
 
