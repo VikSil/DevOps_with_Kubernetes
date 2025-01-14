@@ -94,6 +94,10 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 
 - [Exercise 4.06: Project v2.0 (skipped)](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.06)
 
+### 3. GitOps
+
+- [Exercise 4.07: GitOps the Project](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.07)
+
 
 ## Disclaimers
 
