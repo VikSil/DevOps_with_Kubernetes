@@ -82,7 +82,7 @@ fn todo_component(props: &TodoComponentProps) -> Html {
     };
 
     html! {<li>
-        <button onclick= {button_onclick}> { if *complete_state == false {"DONE"} else {"TODO"}}</button>
+        <button onclick= {button_onclick}> { if *complete_state == false {"TODO"} else {"DONE"}}</button>
         { format!(" | {}", todo.title.to_owned())}
         </li>
     }
