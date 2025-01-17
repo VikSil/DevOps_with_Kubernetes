@@ -1,0 +1,76 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: |
+      {"apiVersion":"apps/v1","kind":"StatefulSet","metadata":{"annotations":{},"name":"postgres","namespace":"todo-namespace"},"spec":{"replicas":1,"selector":{"matchLabels":{"app":"postgres"}},"serviceName":"postgres","template":{"metadata":{"annotations":{"linkerd.io/inject":"enabled"},"labels":{"app":"postgres"}},"spec":{"containers":[{"env":[{"name":"POSTGRES_PASSWORD","valueFrom":{"secretKeyRef":{"key":"POSTGRES_PASSWORD","name":"postgres-secret"}}}],"envFrom":[{"configMapRef":{"name":"postgres-cfgmap"}}],"image":"postgres:10.1","imagePullPolicy":"IfNotPresent","name":"postgres","ports":[{"containerPort":5432}],"volumeMounts":[{"mountPath":"/var/lib/postgresql/data","name":"todo"}]}],"volumes":[{"name":"todo","persistentVolumeClaim":{"claimName":"todo-volume-claim"}}]}}}}
+  creationTimestamp: "2025-01-17T19:39:26Z"
+  generation: 1
+  name: postgres
+  namespace: todo-namespace
+  resourceVersion: "11469"
+  uid: a74ccbfe-6c97-47ce-bec8-6ddecd74431e
+spec:
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+  podManagementPolicy: OrderedReady
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: postgres
+  serviceName: postgres
+  template:
+    metadata:
+      annotations:
+        linkerd.io/inject: enabled
+      creationTimestamp: null
+      labels:
+        app: postgres
+    spec:
+      containers:
+      - env:
+        - name: POSTGRES_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              key: POSTGRES_PASSWORD
+              name: postgres-secret
+        envFrom:
+        - configMapRef:
+            name: postgres-cfgmap
+        image: postgres:10.1
+        imagePullPolicy: IfNotPresent
+        name: postgres
+        ports:
+        - containerPort: 5432
+          protocol: TCP
+        resources: {}
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        volumeMounts:
+        - mountPath: /var/lib/postgresql/data
+          name: todo
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - name: todo
+        persistentVolumeClaim:
+          claimName: todo-volume-claim
+  updateStrategy:
+    rollingUpdate:
+      partition: 0
+    type: RollingUpdate
+status:
+  availableReplicas: 1
+  collisionCount: 0
+  currentReplicas: 1
+  currentRevision: postgres-7697bc578b
+  observedGeneration: 1
+  readyReplicas: 1
+  replicas: 1
+  updateRevision: postgres-7697bc578b
+  updatedReplicas: 1
