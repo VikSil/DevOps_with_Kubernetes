@@ -1,0 +1,10 @@
+[package]
+name = "log_output_writer"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+random-string = "1.0"
+chrono = "0.4"
+axum = { version = "0.7.9", features = ["tokio", "http1"] }
+tokio = { version = "1.42.0", features = ["full"] }
