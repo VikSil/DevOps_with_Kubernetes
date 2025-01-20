@@ -1,0 +1,47 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: log-reader
+spec:
+  template:
+    spec:
+      volumes:
+        - name: configmap-volume
+          configMap:
+            name: log-output-cfgmap
+            items:
+            - key: "information.txt"
+              path: "information.txt" 
+      containers:
+      - image: viksil/log_output_reader:5.07
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8080
+        env:
+        - name: MESSAGE
+          valueFrom:
+            configMapKeyRef:
+              name: log-output-cfgmap
+              key: message
+        - name: PINGPONG_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: log-output-cfgmap
+              key: pingpong_hostname
+        - name: LOG_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: log-output-cfgmap
+              key: log_hostname
+        - name: READ_PORT
+          value: "8080"
+        volumeMounts:
+        - name: configmap-volume
+          mountPath: /usr/local/config
+          readOnly: true
+        readinessProbe:
+          initialDelaySeconds: 270
+          periodSeconds: 10
+          httpGet:
+              path: /healthz
+              port: 8080

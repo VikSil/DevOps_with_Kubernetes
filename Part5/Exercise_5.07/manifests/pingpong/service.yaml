@@ -1,0 +1,30 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: pingpong
+spec:
+  template:
+    spec:
+      containers:
+      - image: viksil/pingpong:5.07
+        imagePullPolicy: Always
+        resources:
+          limits:
+            cpu: "30m"
+            memory: "130Mi"
+        ports:
+        - containerPort: 8080
+        env:
+          - name: DB_URL
+            valueFrom:
+              secretKeyRef:
+                name: pingpong-secret
+                key: DB_URL
+          - name: PING_PORT
+            value: "8080"
+        readinessProbe:
+          initialDelaySeconds: 180 
+          periodSeconds: 10
+          httpGet:
+              path: /healthz
+              port: 8080

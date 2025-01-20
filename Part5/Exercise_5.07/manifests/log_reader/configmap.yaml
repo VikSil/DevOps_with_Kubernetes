@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: log-output-cfgmap
+data:
+  message: "hello world"
+  information.txt: |
+    this text is from file
+  pingpong_hostname: "pingpong.default.172.27.0.2.sslip.io"
+  log_hostname: "log-output.default.172.27.0.2.sslip.io"
+   
