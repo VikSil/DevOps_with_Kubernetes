@@ -26,7 +26,7 @@ A [new repository](https://github.com/VikSil/HU_MOOC_pingpong_app) was set up to
 
 ### [Ingress](https://github.com/VikSil/HU_MOOC_pingpong_app/blob/trunk/manifests/shared_ingress.yaml)
 
-- All ports were switched to the default HTTP port `80`, otherwise unchanged manifests from [Exercise 4.01](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.01) were used.
+- All ports were switched to the default HTTP port `80`, otherwise unchanged manifest from [Exercise 4.01](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.01) was used.
 
 ### [Kustomization](https://github.com/VikSil/HU_MOOC_pingpong_app/blob/trunk/kustomization.yaml)
 

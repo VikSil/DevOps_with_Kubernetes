@@ -12,7 +12,7 @@ The same binaries as for [Exercise 3.02](https://github.com/VikSil/DevOps_with_K
 
 ## Log reader
 
-- Application was modified to use `BACKEND_HOST` environment variable as connection string to pingpong pod and log output pod. The value for `BACKEND_HOST` was set to the external IP of the ingress and passed to the pod via a ConfigMap. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.09/app/log_rader).
+- Application was modified to use `BACKEND_HOST` environment variable as connection string to pingpong pod and log output pod. The value for `BACKEND_HOST` was set to the external IP of the ingress and passed to the pod via a ConfigMap. Source code can be found [here](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part3/Exercise_3.09/app/log_reader).
 - Image was pushed to Docker Hub repo [viksil/log_output_reader:3.09](https://hub.docker.com/r/viksil/log_output_reader/tags?name=3.09).
 
 ## Manifests

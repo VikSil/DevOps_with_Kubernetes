@@ -13,7 +13,7 @@
 
 # Analysis
 
-![CNCF Cloud Native Landscape](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part5/Exercise_5.08/Exercise_5.08_landscape.png)
+![CNCF Cloud Native Landscape](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part5/Exercise_5.08/landscape.png)
 
 ## Directly used
 
@@ -35,7 +35,7 @@
 - I used **Knative** to run serverless deployments in [Exercise 5.06](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part5/Exercise_5.06) and [Exercise 5.07](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part5/Exercise_5.07).
 - I used **Linkerd** as service mesh in [Exercise 5.02](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part5/Exercise_5.02) and [Exercise 5.03](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part5/Exercise_5.03).
 - I've used **citrix** outside of this course.
-- I've used **nginx** outside of this course.
+- I've used **nginx** as a base image for DummySite resource in [Exercise 5.01](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part5/Exercise_5.01).
 - I used **Prometheus** for monitoring the cluster in [Exercise 2.10](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part2/Exercise_2.10) and [Exercise 4.03](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part4/Exercise_4.03).
 - I used **Grafana** to view log messages in [Exercise 2.10](https://github.com/VikSil/DevOps_with_Kubernetes/blob/trunk/Part2/Exercise_2.10)
 

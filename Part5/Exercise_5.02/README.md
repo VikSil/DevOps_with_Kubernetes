@@ -8,13 +8,13 @@
 
 ## Commands
 
-![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part4/Exercise_5.02/Exercise_5.02_commands.png)
+![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part5/Exercise_5.02/Exercise_5.02_commands.png)
 
-![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part4/Exercise_5.02/Exercise_5.02_commands2.png)
+![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part5/Exercise_5.02/Exercise_5.02_commands2.png)
 
-![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part4/Exercise_5.02/Exercise_5.02_commands3.png)
+![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part5/Exercise_5.02/Exercise_5.02_commands3.png)
 
-![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part4/Exercise_5.02/Exercise_5.02_commands4.png)
+![Commands for Exercise 5.02](https://raw.githubusercontent.com/VikSil/DevOps_with_Kubernetes/refs/heads/trunk/Part5/Exercise_5.02/Exercise_5.02_commands4.png)
 
 
 ## Manifests
