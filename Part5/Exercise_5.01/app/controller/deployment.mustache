@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{{ dummysite_name }}}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{{ dummysite_name }}}
+  template:
+    metadata:
+      labels:
+        app: {{{ dummysite_name }}}
+    spec:
+      containers:
+        - name: {{{ dummysite_name }}}
+          imagePullPolicy: Always
+          image: viksil/dummysite:latest
+          env:
+            - name: WEBSITE_URL
+              value: {{{ website_url }}}
