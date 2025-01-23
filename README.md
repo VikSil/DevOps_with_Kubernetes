@@ -100,6 +100,29 @@ This repo was created while taking "Devops with Kubernetes" course, that is prov
 - [Exercise 4.08: GitOps the Project](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part4/Exercise_4.08)
 
 
+## Part 5
+
+### 1. Kubernetes Internals
+
+*This chapter has no exercises*
+
+### 2. Custom Resource Definitions
+
+- [Exercise 5.01: DIY CRD & Controller](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.01)
+
+### 3. Service Mesh
+
+- [Exercise 5.02: Project, the Service Mesh Edition](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.02)
+- [Exercise 5.03: Learn from external material](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.03)
+- [Exercise 5.04: Wikipedia with init and sidecar](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.04)
+
+### 4. Beyond Kubernetes
+
+- [Exercise 5.05: Platform comparison](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.05)
+- [Exercise 5.06: Trying Serverless](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.06)
+- [Exercise 5.07: Deploy to Serverless](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.07)
+- [Exercise 5.08: Landscape](https://github.com/VikSil/DevOps_with_Kubernetes/tree/trunk/Part5/Exercise_5.08)
+
 ## Disclaimers
 
 * Exercise text in README files in this repo has been sourced from the course website. This was done for retention of the orginal exercise text pertaining to solutions in this repo, shall the course change in the future. No copyright infringement intended.
